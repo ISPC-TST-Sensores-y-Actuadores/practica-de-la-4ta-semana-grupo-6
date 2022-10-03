@@ -50,12 +50,12 @@ void loop()
 void displayInfo()
 { // rutina de captura del dato por GPS
     if (gps.location.isValid())
-    {                                                                  // verifico que el datro sea valido del objeto gps
+    {                                                                  // verifico que el dato sea valido del objeto gps
         double latitude = (gps.location.lat());                        // desdoblo la info a cada variable y desprecio velocidad
         double longitude = (gps.location.lng());                       // desdoblo la info a cada variable y desprecio velocidad
         char mqtt_payload[50] = "";                                    // genero el arreglo para alojar los datos
         snprintf(mqtt_payload, 50, "m1=%lf;%lf", latitude, longitude); // armo el payload a enviar
-        client.publish(Topico, mqtt_payload);                          // publico en el brojer el dato del gps
+        client.publish(Topico, mqtt_payload);                          // publico en el broker el dato del gps
         delay(writeInterval);                                          // espero este tiempo para hacer otra publicacion
     }
 }
