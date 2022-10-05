@@ -30,16 +30,16 @@ void loop()
   Serial.println(" *C");                   // imprimo C de centigrado al final del renglon y hago CR/LF
   Serial.print("Presion = ");              // imprimo por serial la palabra Presion
   Serial.print(bmp.readPressure() / 100);  // recupero del objeto el metodo readPressure y divido para Hectopascal
-  Serial.println(" hPa");                  // imprimo Hecto pascal
+  Serial.println(" hPa");                  // imprimo Hectopascal
   Serial.print("Altitud = ");              // imprimo por serial la palabra Altitud
-  Serial.print(bmp.readAltitude(1013.25)); // recupero del objeto el medtodo readAltitud e instancio
+  Serial.print(bmp.readAltitude(1013.25)); // recupero del objeto el metodo readAltitud e instancio
   Serial.println(" m");
-  Serial.println();                // imprimo CRyLF
-  digitalWrite(LED_BUILTIN, HIGH); // Enciendo led azul
+  Serial.println();               // imprimo CRyLF
+  digitalWrite(LED_BUILTIN, HIGH);// Enciendo led azul
   delay(100);
   digitalWrite(LED_BUILTIN, LOW); // apago led azul
   delay(100);
-  digitalWrite(LED_BUILTIN, HIGH); // Enciendo led azul
+  digitalWrite(LED_BUILTIN, HIGH);// Enciendo led azul
   delay(100);
   digitalWrite(LED_BUILTIN, LOW); // apago led azul
   delay(3000);
