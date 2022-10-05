@@ -21,7 +21,8 @@ static const int RXPin = 16, TXPin = 17;               // pines del serial por s
 WiFiClient esp32_Client;           // creacion de objeto wifi client
 PubSubClient client(esp32_Client); // creacion de objeto pubsunclient
 TinyGPSPlus gps;                   // creacion de objeto del gps
-SoftwareSerial ss(RXPin, TXPin);   // declaracion de los pines del software serial
+SoftwareSerial ss(RXPin, TXPin);   // creacion del objeto Serial por soft
+                                   // declaracion de los pines del software serial
 
 void setup()
 {
@@ -33,7 +34,7 @@ void setup()
     {                // inicio conexion
         delay(1500); // demora para volver a intentar la conexion
     }
-    client.setServer(mqtt_server, mqtt_port); // estableco conexion al server mwtt
+    client.setServer(mqtt_server, mqtt_port); // estableco conexion al server mwtt (ISPC)
     client.setCallback(callback);             // inicio el callback de server mqtt y espero datos
 }
 
